@@ -19,5 +19,3 @@ router.get(
 );
 
 app.use('/', router);
-
-app.listen(8080);
