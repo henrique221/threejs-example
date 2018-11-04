@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, '/test/'));
 app.use('/static', express.static(path.join(__dirname, '../public/')));
 
 router.get(
-    '/index',
+    '/',
     (req, res, next) => res.render("index.html")
 );
 
