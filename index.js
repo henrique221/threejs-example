@@ -1,21 +1,22 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const path = require('path');
+const app = express();
 const swig = require('swig');
 const router = express.Router();
-
-const app = express();
 
 app.use(bodyParser.urlencoded({
     extended: false
 }))
 
-app.set('views', path.join(__dirname, '/test/'));
-app.use('/static', express.static(path.join(__dirname, '../public/')));
+app.engine('html', swig.renderFile);
 
-router.get(
-    '/',
-    (req, res, next) => res.render("index.html")
-);
+router.get('/', function(req, res) {
+    res.render('index.html');
+});
+
+app.listen(process.env.PORT || 4000, function(){
+    console.log('Your node js server is running');
+});
 
 app.use('/', router);
