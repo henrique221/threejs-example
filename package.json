@@ -19,6 +19,8 @@
   "homepage": "https://github.com/henrique221/threejs-example#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "swig": "^1.4.2",
+    "yarn": "^1.12.1"
   }
 }
